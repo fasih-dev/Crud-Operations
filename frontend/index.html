@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple CRUD App</title>
+<style>
+  /* Add your styles here */
+  body {
+    font-family: Arial, sans-serif;
+  }
+</style>
+</head>
+<body>
+<h1>Item Management</h1>
+
+<!-- Create Form -->
+<h2>Create Item</h2>
+<form id="create-form">
+  <input type="text" id="create-name" placeholder="Item Name">
+  <button type="submit">Create</button>
+</form>
+
+<!-- Items List -->
+<h2>Items</h2>
+<ul id="items-list"></ul>
+
+<!-- Update Form -->
+<h2>Update Item</h2>
+<form id="update-form" style="display:none;">
+  <input type="hidden" id="update-id">
+  <input type="text" id="update-name" placeholder="New Name">
+  <button type="submit">Update</button>
+  <button type="button" onclick="cancelUpdate()">Cancel</button>
+</form>
+
+<script src="app.js"></script>
+</body>
+</html>
