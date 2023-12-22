@@ -24,7 +24,7 @@ function createItem(e) {
 
 // Function to get all items
 function getAllItems() {
-    fetch('http://localhost:5000/items') // Replace with your API URL
+    fetch('http://localhost:5000/items')
         .then(response => response.json())
         .then(items => {
             const itemsList = document.getElementById('items-list');
@@ -44,10 +44,10 @@ function getAllItems() {
 
 // Function to delete an item
 function deleteItem(id) {
-    fetch(`http://localhost:5000/items/${id}`, { // Replace with your API URL
+    fetch(`http://localhost:5000/items/${id}`, {
         method: 'DELETE',
     })
-        .then(() => getAllItems()) // Refresh the list
+        .then(() => getAllItems())
         .catch(error => console.error('Error:', error));
 }
 
@@ -63,7 +63,7 @@ document.getElementById('update-form').addEventListener('submit', function (e) {
     e.preventDefault();
     const itemId = document.getElementById('update-id').value;
     const itemName = document.getElementById('update-name').value;
-    fetch(`http://localhost:5000/items/${itemId}`, { // Replace with your API URL
+    fetch(`http://localhost:5000/items/${itemId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -72,8 +72,8 @@ document.getElementById('update-form').addEventListener('submit', function (e) {
     })
         .then(response => response.json())
         .then(() => {
-            getAllItems(); // Refresh the list
-            cancelUpdate(); // Hide the update form
+            getAllItems();
+            cancelUpdate();
         })
         .catch(error => console.error('Error:', error));
 });

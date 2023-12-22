@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Item = require('../models/item'); // Adjust the path as per your project structure
+const Item = require('../models/item');
 
 // Create
 router.post('/', async (req, res) => {
@@ -53,7 +53,6 @@ router.delete('/:id', getItem, async (req, res) => {
     }
 });
 
-// Middleware to get item object by ID
 async function getItem(req, res, next) {
     let item;
     try {
